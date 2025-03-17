@@ -1,84 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Balls Controller</title>
+    <title>趣味项目目录</title>
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .link-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #1a1a1a;
+            gap: 15px;
         }
 
-        #container {
-            width: 500px;
-            height: 500px;
-            display: grid;
-            grid-template-columns: repeat(25, 1fr);
-            gap: 0;
-            margin-bottom: 20px;
-            border: 2px solid #fff;
-        }
-
-        .ball {
-            width: 20px;
-            height: 20px;
-            background: #fff;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .slider {
-            width: 500px;
-            height: 30px;
-            background: #333;
-            border-radius: 15px;
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none; /* 新增标准属性 */
-        }
-
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none; /* 新增标准属性 */
-            width: 30px;
-            height: 30px;
-            background: #fff;
-            border-radius: 50%;
+        .link-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            transform: translateY(0);
+            transition: all 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            color: #34495e;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background: #f8f9fa;
+        }
+
+        .link-item span {
+            font-size: 1.2em;
+            font-weight: 500;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .link-item:hover span {
+            color: #3498db;
+        }
+
+        /* 滚动动画 */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="container"></div>
-    <input type="range" class="slider" min="0" max="360" value="0">
+    <div class="container">
+        <h1>🎮 趣味项目目录</h1>
+        <div class="link-list">
+            <a href="archive/Balls.html" class="link-item" style="animation: slideIn 0.6s ease-out;">
+                <span>变色小球阵列</span>
+            </a>
+            <!-- 后续可以在这里添加更多链接 -->
+        </div>
+    </div>
 
     <script>
-        // 生成小球矩阵
-        const container = document.getElementById('container');
-        const ballCount = 25 * 25; // 25x25网格
-
-        for (let i = 0; i < ballCount; i++) {
-            const ball = document.createElement('div');
-            ball.className = 'ball';
-            container.appendChild(ball);
-        }
-
-        // 滑块交互
-        const slider = document.querySelector('.slider');
-        const balls = document.querySelectorAll('.ball');
-
-        slider.addEventListener('input', (e) => {
-            const hue = e.target.value;
-            balls.forEach(ball => {
-                ball.style.background = `hsl(${hue}, 70%, 50%)`;
+        // 添加点击反馈
+        document.querySelectorAll('.link-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                // 添加点击动画
+                e.target.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 200);
             });
         });
+
+        // 页面入场动画
+        window.addEventListener('load', () => {
+            document.body.style.opacity = 1;
+        });
+
+        // 初始隐藏页面实现渐显效果
+        document.body.style.opacity = 0;
+        document.body.style.transition = 'opacity 0.5s ease';
     </script>
 </body>
 </html>

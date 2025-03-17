@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Balls Controller</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: repeat(25, 1fr);
+            gap: 0;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .slider {
+            width: 500px;
+            height: 30px;
+            background: #333;
+            border-radius: 15px;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none; /* 新增标准属性 */
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none; /* 新增标准属性 */
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <input type="range" class="slider" min="0" max="360" value="0">
+
+    <script>
+        // 生成小球矩阵
+        const container = document.getElementById('container');
+        const ballCount = 25 * 25; // 25x25网格
+
+        for (let i = 0; i < ballCount; i++) {
+            const ball = document.createElement('div');
+            ball.className = 'ball';
+            container.appendChild(ball);
+        }
+
+        // 滑块交互
+        const slider = document.querySelector('.slider');
+        const balls = document.querySelectorAll('.ball');
+
+        slider.addEventListener('input', (e) => {
+            const hue = e.target.value;
+            balls.forEach(ball => {
+                ball.style.background = `hsl(${hue}, 70%, 50%)`;
+            });
+        });
+    </script>
+</body>
+</html>
