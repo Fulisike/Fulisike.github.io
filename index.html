@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-05-04 11:46:22 / Modified: 11:46:49" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
+              <time title="Created: 2025-05-04 11:46:22 / Modified: 11:51:06" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -200,27 +200,14 @@
       
           <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>包括分块这类思想性的项目。</p>
 <p>既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。</p>
-<h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><p>分块是一种思想，什么思想呢？平衡预处理和查询的思想。</p>
-<p>什么意思呢，一般的暴力写出来，基本是不需要“预处理”的，但是“查询”部分开销过大。</p>
-<p>之所以称其为“暴力”做法，也就是这份巨大的开销了。</p>
-<p>分块就是用来拉平这不平衡的两端的。</p>
-<p>也就是说，分块希望：</p>
-<ul>
-<li>预处理好的部分，在查询的时候 $O(1)$ 直接拿来用（虽然这样的部分本身也有<strong>一定规模</strong>）</li>
-<li>剩下的部分，因为能够成为<strong>一定规模</strong>的部分都预处理好了，所以即使暴力查询，开销不会大于这“<strong>一定规模</strong>”</li>
-</ul>
-<p>而分块本身不对“查询”这一件事情，或者说用以完成“查询”这一操作的算法进行（显著）优化的。</p>
-<p>所以从另一个角度来说，假如一个问题<strong>本身的算法没有很好的优化方向</strong>，那么在<strong>预处理这个方向上</strong>可以考虑分块。</p>
-<blockquote>
-<p>比如求一片区域的数对某个每次都不一样的数取模的结果的最大值，这在数学方面其实没有很好的优化方向</p>
-</blockquote>
-<p>进一步配合前缀和与差分等其他算法可以进一步优化，但这是分块的后话了，此处无需关心。</p>
-<p>那么深入下去，前文频繁出现“一定规模”，这就关乎“<strong>块长</strong>”，分块思想就是通过块长来平衡预处理和查询的。</p>
-<p>如何决定块长？答案是：根据时间复杂度分析。时间复杂度会成为一个关于块长的函数，求其最小值点即可。</p>
-<p>如何分析时间复杂度？答案是：假定已经按照 $B$ 作为块长分块，此时的暴力时间复杂度。</p>
-<p>最后使用数学手段求得最小值点，即为所求块长。</p>
-<p>注意分块思想能够处理的“信息类型”基本上是<strong>满足答案由部分收集而成</strong>的那种，这个就要具体问题具体分析。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
