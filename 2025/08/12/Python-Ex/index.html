@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1python中可以为定义的函数写doctest，格式一般是： 12345def f(...):    &#x27;&#x27;&#x27;    &gt;&gt;&gt; f(&lt;args&gt;)    &lt;expected answer(s)&gt;    &#x27;&#x27;&#x27; 相当于包含在文档字符串中 2python的print语句打印字符串时，打印其中的内容，而假">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[object Object]">
+<meta property="og:url" content="http://example.com/2025/08/12/Python-Ex/index.html">
+<meta property="og:site_name" content="Home">
+<meta property="og:description" content="1python中可以为定义的函数写doctest，格式一般是： 12345def f(...):    &#x27;&#x27;&#x27;    &gt;&gt;&gt; f(&lt;args&gt;)    &lt;expected answer(s)&gt;    &#x27;&#x27;&#x27; 相当于包含在文档字符串中 2python的print语句打印字符串时，打印其中的内容，而假">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-08-12T10:06:41.728Z">
+<meta property="article:modified_time" content="2025-08-12T10:14:29.431Z">
+<meta property="article:author" content="Fulisike">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/08/12/Python-Ex/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>[object Object] | Home</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Home</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-html">
+
+    <a href="/HTML/" rel="section"><i class="fa fa-code fa-fw"></i>HTML</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/12/Python-Ex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fulisike">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Home">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [object Object]
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-08-12 18:06:41 / Modified: 18:14:29" itemprop="dateCreated datePublished" datetime="2025-08-12T18:06:41+08:00">2025-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%87%8D%E5%AD%A6%E4%B8%80%E5%88%87/" itemprop="url" rel="index"><span itemprop="name">重学一切</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>python中可以为定义的函数写doctest，格式一般是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">...</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f(&lt;args&gt;)</span></span><br><span class="line"><span class="string">    &lt;expected answer(s)&gt;</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>相当于包含在文档字符串中</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>python的print语句打印字符串时，打印其中的内容，而假如一个函数return了一个字符串<br>而这个函数是运行在python的那个终端的：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f(...) # returned a string</span><br></pre></td></tr></table></figure>
+<p>那么在终端最后会打印出带双引号的字符串对象<br>这里还应注意到，python自己在打印字符串对象的时候用的一定是双引号<br>虽然它也能知道单引号括起来的字符串也是字符串对象</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>lambda表达式直接不执行，像其他函数一样在调用的时候执行<br>但是如果直接写一个lambda表达式，python会认为这是一个函数“&lt;function…&gt;”<br>即使这样单独地写的时候，这个“函数”没有函数名</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>虽然有第3条，但是这个lambda表达式本身就已经是一个函数了，所以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">lambda</span> x: x)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>是合理的，（而且上述代码打印：3）</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>lambda表达式也是函数，python的函数几乎什么都可以return，lambda也是<br>所以lambda表达式可以return另外一个lambda表达式函数</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>lambda表达式里，冒号前面的是正式参数，不过你也可以在冒号之后用到没在冒号前面出现的变量<br>这些变量是遵守变量作用域的，和一般地用def嵌套定义函数是一样的</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7"></a>7</h3><p>函数也可以作为参数</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8"></a>8</h3><p>print函数的返回值是None，什么都不会打印</p>
+<p>Truth Will Prevail需要回看slides，知识点不熟</p>
+<hr>
+<p>46: cs101学习git,vim,tmux等<br>47: 比赛:超算,ctf<br>48: 多和其他学校的人交流:tuna,ustc<br>49: 参加社团:sjtug, nimo<br>52: 实习（多刷牛客网,linkedin,脉脉）<br>56: 自己装机组建homelab能学到很多</p>
+<hr>
+<h3 id="9"><a href="#9" class="headerlink" title="9"></a>9</h3><p>python里面想要枚举一个dict其实非常简单：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> dic.keys():</span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> dic.values()</span><br></pre></td></tr></table></figure>
+<p>即可<br>当然也还有键值对一并枚举的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> dic.items():</span><br></pre></td></tr></table></figure>
+<p>这些才是python的“终极优势”的啊，要好好发挥出来的啊</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10"></a>10</h3><p>在python里面，range就是一种独立的类型，比如下面的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>python输出的直接就是<code>range(1, 3)</code>，而不是一个列表或元组<br>想要把一个range变成真正的列表或元组，需要给它做类型转换</p>
+<h3 id="11"><a href="#11" class="headerlink" title="11"></a>11</h3><p>安装python包的时候，有时会报一些subprocess出错，这些有的很棘手，这时一个对策是：<br>release下载.whl然后本地安装<br>.whl文件为了方便python包的离线安装与分发而存在<br>其本质就是一个压缩包，所以直接将其后缀改为.zip就变成熟悉的压缩包<br>解压之后就会看到其内部的文件，其中有一个带-info的文件夹，里面有一个文件METADATA<br>这是一个文本文件，用记事本打开之后，有若干Requires-Dist，那就是这个包的依赖<br>再顺藤摸瓜去安装好所有依赖项后，就可以顺利安装这个包了<br>如果没有Requires-Dist，就说明当前这个包不依赖别的包，直接安装即可<br>安装包的时候要特别注意版本限制</p>
+<h3 id="12"><a href="#12" class="headerlink" title="12"></a>12</h3><p>如果搞了一个map的iterator，那么这个iterator在调用next的时候，是按照<strong>键值</strong>来返回的</p>
+<h3 id="13"><a href="#13" class="headerlink" title="13"></a>13</h3><p>list的append函数是有<strong>正常的返回</strong>的，只不过人家的返回值是一个None罢了<br>虽然这么说来等于说人家没有返回值，但是肯定不能就此认为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line"><span class="built_in">print</span>(s.append(<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+<p>会打印出来新的s，人家也是正统的函数，该返回什么就会返回什么</p>
+<h3 id="14"><a href="#14" class="headerlink" title="14"></a>14</h3><p>在python中，按顺序执行出来是什么就是什么，比如append函数，虽然返回一个None，但是执行之后是对执行的对象切切实实做了改变的<br>在python中，把一行代码按照执行顺序拆成多条直观的代码，就能很清晰地知道运行了什么以及结果会是如何，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">s.extend([s.append(<span class="number">9</span>), s.append(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+<p>打印出来的是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[3, 4, 5, 9, 10, None, None]</span><br></pre></td></tr></table></figure>
+
+<h3 id="15"><a href="#15" class="headerlink" title="15"></a>15</h3><p>在python中，类可以有<strong>自己的</strong>成员变量，怎么说“自己的”呢？只能说从运行的表象去理解，比如下面的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">	x, y = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
+<p>那么运行起来的时候，此处的<code>x</code>和<code>y</code>就是直接属于类<code>A</code>的变量，用法是直接<code>A.x</code>和<code>A.y</code>，而无需通过实例来访问<br>然而，类的实例也会有自己的一份成员变量，刚刚创建好一个实例的时候，这个实例会拥有类原本直接拥有的成员变量，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    x, y = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">obj = A()</span><br><span class="line"><span class="built_in">print</span>(obj.x) // <span class="number">0</span></span><br><span class="line"></span><br><span class="line">A.x = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">3</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">1</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line">A.x = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>并且注意到这个时候实例所“拥有的”这个成员变量链接到的就是类原本直接拥有的成员变量<br>然而，当对实例下属的<strong>它自己真正的成员变量</strong>（而不是它所属于的类的）进行（能够或需要创建一个新的变量的）操作时，这个实例就开始拥有独属于自己的成员变量，这和一般的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">	<span class="variable language_">self</span>.x = ...</span><br></pre></td></tr></table></figure>
+<p>道理是一样的（即使变量名重复）<br>在这之后，在类定义外部直接<code>obj.x</code>其实已经是<code>self.x</code>的用法了，而不是刚刚初始化时候等价于<code>A.x</code>的用法<br>接下来考虑的是继承的问题，针对这个问题把子类想象为一个实例去理解即可，至少运行起来的表象的规律是一致的</p>
+<hr>
+<p>至此，CS61A（Fall2024）的12个Lab全部写完啦~<br><del>虽然但是，还有HW和Project没写捏……</del></p>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="[object Object]">
+      <i class="fa fa-chevron-left"></i> [object Object]
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/08/12/MCPP/" rel="next" title="[object Object]">
+      [object Object] <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8"><span class="nav-number">8.</span> <span class="nav-text">8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11"><span class="nav-number">11.</span> <span class="nav-text">11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12"><span class="nav-number">12.</span> <span class="nav-text">12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13"><span class="nav-number">13.</span> <span class="nav-text">13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14"><span class="nav-number">14.</span> <span class="nav-text">14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15"><span class="nav-number">15.</span> <span class="nav-text">15</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Fulisike</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fulisike</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

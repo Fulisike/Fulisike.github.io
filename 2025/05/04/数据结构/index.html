@@ -20,17 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="数据结构包括分块这类思想性的项目。 既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。">
+  <meta name="description" content="数据结构包括分块这类思想性的项目。 既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。 分块分块是一种思想，什么思想呢？平衡预处理和查询的思想。 什么意思呢，一般的暴力写出来，基本是不需要“预处理”的，但是“查询”部分开销过大。 之所以称其为“暴力”做法，也就是这份巨大的开销了。 分块就是用来拉平这不平衡的两端的。 也就是说，分块希望：  预处理好的部分，在查询的时候 $O(1)$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data Structures">
+<meta property="og:title" content="[object Object]">
 <meta property="og:url" content="http://example.com/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Home">
-<meta property="og:description" content="数据结构包括分块这类思想性的项目。 既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。">
+<meta property="og:description" content="数据结构包括分块这类思想性的项目。 既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。 分块分块是一种思想，什么思想呢？平衡预处理和查询的思想。 什么意思呢，一般的暴力写出来，基本是不需要“预处理”的，但是“查询”部分开销过大。 之所以称其为“暴力”做法，也就是这份巨大的开销了。 分块就是用来拉平这不平衡的两端的。 也就是说，分块希望：  预处理好的部分，在查询的时候 $O(1)$">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%95%A3%E5%88%97%E8%A1%A8%E5%88%A0%E9%99%A4.png">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%8F%8C%E6%95%A3%E5%88%97%E6%8E%A2%E6%B5%8B%E6%B3%95.png">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%8D%E6%95%A3%E5%88%97.png">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%BA%BF%E6%80%A7%E6%80%A7%E8%83%BD.png">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%B9%B3%E6%96%B9%E6%80%A7%E8%83%BD.png">
+<meta property="og:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%86%E7%A6%BB%E6%80%A7%E8%83%BD.png">
 <meta property="article:published_time" content="2025-05-04T03:46:22.443Z">
-<meta property="article:modified_time" content="2025-05-04T03:51:06.026Z">
+<meta property="article:modified_time" content="2025-08-12T10:14:42.526Z">
 <meta property="article:author" content="Fulisike">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\30136\Desktop\%E7%AC%94%E8%AE%B0\%E9%A2%84%E4%B9%A0%E3%80%90%E6%B5%99%E5%A4%A7%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%95%A3%E5%88%97%E8%A1%A8%E5%88%A0%E9%99%A4.png">
 
 <link rel="canonical" href="http://example.com/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
@@ -45,7 +52,7 @@
   };
 </script>
 
-  <title>Data Structures | Home</title>
+  <title>[object Object] | Home</title>
   
 
 
@@ -168,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Data Structures
+          [object Object]
         </h1>
 
         <div class="post-meta">
@@ -177,10 +184,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-05-04 11:46:22 / Modified: 11:51:06" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
+              <time title="Created: 2025-05-04 11:46:22" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-08-12 18:14:42" itemprop="dateModified" datetime="2025-08-12T18:14:42+08:00">2025-08-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -204,8 +217,6 @@
       
         <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>包括分块这类思想性的项目。</p>
 <p>既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。</p>
-<span id="more"></span>
-
 <h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><p>分块是一种思想，什么思想呢？平衡预处理和查询的思想。</p>
 <p>什么意思呢，一般的暴力写出来，基本是不需要“预处理”的，但是“查询”部分开销过大。</p>
 <p>之所以称其为“暴力”做法，也就是这份巨大的开销了。</p>
@@ -226,6 +237,90 @@
 <p>如何分析时间复杂度？答案是：假定已经按照 $B$ 作为块长分块，此时的暴力时间复杂度。</p>
 <p>最后使用数学手段求得最小值点，即为所求块长。</p>
 <p>注意分块思想能够处理的“信息类型”基本上是<strong>满足答案由部分收集而成</strong>的那种，这个就要具体问题具体分析。</p>
+<h2 id="散列表（哈希表）"><a href="#散列表（哈希表）" class="headerlink" title="散列表（哈希表）"></a>散列表（哈希表）</h2><p>散列表（哈希表）解决的问题就是有关<strong>查找</strong>的问题：如何快速搜索到需要的关键词？</p>
+<p>首先考虑查找的本质的问题：什么叫做“查找”？</p>
+<h3 id="查找的本质"><a href="#查找的本质" class="headerlink" title="查找的本质"></a>查找的本质</h3><p>【浙大】数据结构课程中，讲查找的本质是<strong>已知对象找位置</strong></p>
+<p>为了做到这一点，有两种基本方法：</p>
+<ol>
+<li>有序安排对象：全序（一开始就把整个序列排好序）、半序（比如二叉搜索树，只是保证左右子树之间的次序）</li>
+<li>直接“算出”对象位置：这就是<strong>散列</strong>的思想方法</li>
+</ol>
+<h3 id="散列查找法"><a href="#散列查找法" class="headerlink" title="散列查找法"></a>散列查找法</h3><p>关键在于两部分：</p>
+<ol>
+<li>计算位置：构造散列函数确定关键词存储位置</li>
+<li>解决冲突：应用某种策略解决多个关键词位置相同的问题</li>
+</ol>
+<p>若是处理得当，时间复杂度几乎是常量 $O(1)$</p>
+<h3 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h3><blockquote>
+<p>贯穿始终的原理：查找某元素，找到表中某处为空，则该元素必然不在表中</p>
+</blockquote>
+<p><strong>装填因子</strong> $\alpha&#x3D;\frac{m}{n}$，其中 $n$ 是散列表空间大小，$m$ 是填入散列表中的元素个数</p>
+<p>好的散列函数至少要考虑到两个因素：</p>
+<ol>
+<li>计算简单，以提高转换速度</li>
+<li>关键词对应的地址空间分布均匀，以尽量减少冲突</li>
+</ol>
+<h3 id="散列函数构造方法"><a href="#散列函数构造方法" class="headerlink" title="散列函数构造方法"></a>散列函数构造方法</h3><p><strong>直接定址法</strong></p>
+<p>散列函数取为某线性函数</p>
+<p><strong>除留余数法</strong></p>
+<p>对某素数求余</p>
+<p><strong>数字分析法</strong></p>
+<p>根据数字关键字在各位上的变化情况，取较为随机的位作为散列地址</p>
+<p><strong>折叠法</strong></p>
+<p>把关键词分割成位数相同的几个部分，然后叠加</p>
+<p><strong>平方取中法</strong></p>
+<p>平方之后，取中间的若干位数作为散列地址</p>
+<hr>
+<p>对于字符关键字：</p>
+<p><strong>ASCII 码加和法</strong></p>
+<p>改进后：<strong>前三个字符移位法</strong></p>
+<p>继续改进：<strong>编码为32进制大数（存在 unsigned int 里最后求余）</strong></p>
+<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><p>常用方法：</p>
+<ol>
+<li>换个位置：开放地址法</li>
+<li>同一位置的冲突对象组织在一起：链地址法</li>
+</ol>
+<p>开放地址法（Open Addressing）</p>
+<p>若发生了第 $i$ 次冲突，试探的下一个地址将增加 $d_i$</p>
+<p>$d_i$ 取值的不同，对应不同的探测策略，比如：线性探测法、平方探测法、双散列等</p>
+<h3 id="散列表查找性能分析"><a href="#散列表查找性能分析" class="headerlink" title="散列表查找性能分析"></a>散列表查找性能分析</h3><p>分析两个指标：<strong>成功平均查找长度（ASLs）</strong>、<strong>不成功平均查找长度（ASLu）</strong></p>
+<p>ASLs 等于所有元素冲突次数加1之和的平均值（查找成功等价于所查找的元素在散列表中）</p>
+<p>ASLu 等于<strong>所有类别的关键字</strong>确定不在表中所需查找次数之和的平均值</p>
+<p>线性探测法会出现<strong>聚集</strong>现象</p>
+<p>二次探测法可能会出现无法插入（或无法判断不存在）的情况</p>
+<blockquote>
+<p>定理：如果散列表长度是某个 $4k+3$ 形式的素数时，平方探测法就可以探查到整个散列表空间</p>
+</blockquote>
+<h3 id="散列表实现细节"><a href="#散列表实现细节" class="headerlink" title="散列表实现细节"></a>散列表实现细节</h3><p>非常要注意的是删除操作，如果直接移除目标元素，那么可以想象到：本来，以前因为有这个元素，一些其他元素插入的时候冲突了被按照探测策略放入了其他位置，结果现在这个元素占据的表中的位置直接变成空位了，那么之后想要查找那些以前冲突了的其他元素，在探测到该空位的时候就会被判断为不在表内，从而给出错误的结果</p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：散列表删除.png"></p>
+<p>另外的一些截图：</p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：双散列探测法.png"></p>
+<p>还有一种<strong>再散列</strong>的方法，当散列表中元素太多的时候，查找效率会下降，这时将散列表扩大，并且<strong>原有元素需要重新计算放置到新表中</strong></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：再散列.png"></p>
+<h3 id="更细节的性能分析（只有结果，没有过程）"><a href="#更细节的性能分析（只有结果，没有过程）" class="headerlink" title="更细节的性能分析（只有结果，没有过程）"></a>更细节的性能分析（只有结果，没有过程）</h3><p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：线性性能.png"></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：平方性能.png"></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：分离性能.png"></p>
+<h2 id="块状链表"><a href="#块状链表" class="headerlink" title="块状链表"></a>块状链表</h2><p>块状链表应用了分块思想，将数组与链表取长补短，达到了较优秀的时间复杂度</p>
+<p>具体来说，数组能够实现 $O(1)$ 访问，却需要 $O(n)$ 实现任意位置插入（时间开销来源于需要给新数据腾出位置，所以需要依次移动后面的数据）；而链表能够实现 $O(1)$ 任意指定位置插入，却需要 $O(n)$ 访问某位置（这是因为链表存储不连续，每次只能够从表头开始遍历）</p>
+<p>但是如果链表上挂数组（不是数组上挂链表哈），那么再来考察一下这些复杂度就会发现：</p>
+<p>（把挂载的数组叫做块）假设数据总规模是 $n$（实际上直接这样去分析也不怎么严谨，但是原理确实是这样讲的，总之当作便于表示好了），链表上所挂的数组大小为 $m$（这个大小是预先定好的，默认预留空间的大小），那么链表的节点个数将会是 $\frac{n}{m}$，且：</p>
+<ol>
+<li>访问某处：在链表上 $O(\frac{n}{m})$ 跳到某处所在块，再 $O(1)$ 数组访问</li>
+<li>在某处插入：还是先 $O(\frac{n}{m})$ 跳到某处所在块，再 $O(?)$ 链表插入</li>
+</ol>
+<p>（看起来时间还是花在链表上，但实际上是两边各做了让步）</p>
+<p>插入操作需要仔细考虑一下，那个 “?” 究竟是什么？</p>
+<p>首先找到指定的位置，这一步很容易理解，直接在链表上遍历就是了，接下来，如果定位在一块的末尾（我们的问题定义为“在某处<strong>之后</strong>插入”），那么直接在链表上的该处插入数据块即可，这样是 $O(1)$ 的</p>
+<p><strong>注意注意：到此为止所说的 $O(1)$ 指的都是操作数层面的，代表“常数次操作”，但是比如插入一大串字符串，那么为了把数据复制进块状链表中，会产生诸如 $O(len)$ 的时间开销，这些没有表示在内（所以说不严谨就是）</strong></p>
+<p>但是如果定位在块的中间，那么就需要 $O(m)$ 的时间开销来腾出位置（和纯数组一样）</p>
+<p>因此，取 $m &#x3D; \sqrt{n}$ 会得到最优的整体的时间复杂度</p>
+<p>但是疑似也可以进一步进行更精细的分析，得到针对非常具体的问题的最优时间复杂度</p>
+<p>一般应用时，直接固定块的大小上限为常数，并且认为平均时间复杂度为 $O(\sqrt{n})$</p>
+<p>实际实现的时候，可以实现为：在一次插入之中，先不由分说全部插入到指定位置，然后进行全局的 maintain，这个 maintain 将每个块的大小控制在确定的范围内</p>
+<p>maintain 其实也是很直接，直接遍历链表，该分裂则分裂，该合并则合并</p>
+<p>然后块状链表的删除也是先定位，然后整块在链表上删，散块在数组上删，记得 maintain</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>采用 STL 的 list 套 vector，合理吧（链表上挂数组）</p>
+<p>不得不说，<strong>左闭右开、从0开始</strong>是真的人类与计算机智慧</p>
 
     </div>
 
@@ -241,12 +336,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/02/23/xxx-first-blog/" rel="prev" title="xxx-first-blog">
-      <i class="fa fa-chevron-left"></i> xxx-first-blog
+    <a href="/2025/02/23/xxx-first-blog/" rel="prev" title="Fulisike-first-blog">
+      <i class="fa fa-chevron-left"></i> Fulisike-first-blog
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/08/12/MCPP/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
+    <a href="/2025/08/12/Python-Ex/" rel="next" title="[object Object]">
+      [object Object] <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -306,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97"><span class="nav-number">1.1.</span> <span class="nav-text">分块</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97"><span class="nav-number">1.1.</span> <span class="nav-text">分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8%EF%BC%88%E5%93%88%E5%B8%8C%E8%A1%A8%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">散列表（哈希表）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">查找的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">散列查找法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8"><span class="nav-number">1.2.3.</span> <span class="nav-text">散列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.4.</span> <span class="nav-text">散列函数构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%86%B2%E7%AA%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.5.</span> <span class="nav-text">处理冲突的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8%E6%9F%A5%E6%89%BE%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">1.2.6.</span> <span class="nav-text">散列表查找性能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="nav-number">1.2.7.</span> <span class="nav-text">散列表实现细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E7%BB%86%E8%8A%82%E7%9A%84%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%EF%BC%88%E5%8F%AA%E6%9C%89%E7%BB%93%E6%9E%9C%EF%BC%8C%E6%B2%A1%E6%9C%89%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="nav-number">1.2.8.</span> <span class="nav-text">更细节的性能分析（只有结果，没有过程）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%97%E7%8A%B6%E9%93%BE%E8%A1%A8"><span class="nav-number">1.3.</span> <span class="nav-text">块状链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -320,7 +415,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

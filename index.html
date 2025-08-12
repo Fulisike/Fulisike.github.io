@@ -164,7 +164,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/08/12/MCPP/" class="post-title-link" itemprop="url">Untitled</a>
+            <a href="/2025/08/12/MCPP/" class="post-title-link" itemprop="url">[object Object]</a>
         </h2>
 
         <div class="post-meta">
@@ -175,7 +175,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-08-12 18:06:41 / Modified: 18:05:42" itemprop="dateCreated datePublished" datetime="2025-08-12T18:06:41+08:00">2025-08-12</time>
+              <time title="Created: 2025-08-12 18:06:41 / Modified: 18:14:34" itemprop="dateCreated datePublished" datetime="2025-08-12T18:06:41+08:00">2025-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%87%8D%E5%AD%A6%E4%B8%80%E5%88%87/" itemprop="url" rel="index"><span itemprop="name">重学一切</span></a>
+                </span>
             </span>
 
           
@@ -355,6 +364,119 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/12/Python-Ex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fulisike">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Home">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/08/12/Python-Ex/" class="post-title-link" itemprop="url">[object Object]</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-08-12 18:06:41 / Modified: 18:14:29" itemprop="dateCreated datePublished" datetime="2025-08-12T18:06:41+08:00">2025-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%87%8D%E5%AD%A6%E4%B8%80%E5%88%87/" itemprop="url" rel="index"><span itemprop="name">重学一切</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>python中可以为定义的函数写doctest，格式一般是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">...</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f(&lt;args&gt;)</span></span><br><span class="line"><span class="string">    &lt;expected answer(s)&gt;</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>相当于包含在文档字符串中</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>python的print语句打印字符串时，打印其中的内容，而假如一个函数return了一个字符串<br>而这个函数是运行在python的那个终端的：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f(...) # returned a string</span><br></pre></td></tr></table></figure>
+<p>那么在终端最后会打印出带双引号的字符串对象<br>这里还应注意到，python自己在打印字符串对象的时候用的一定是双引号<br>虽然它也能知道单引号括起来的字符串也是字符串对象</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>lambda表达式直接不执行，像其他函数一样在调用的时候执行<br>但是如果直接写一个lambda表达式，python会认为这是一个函数“&lt;function…&gt;”<br>即使这样单独地写的时候，这个“函数”没有函数名</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>虽然有第3条，但是这个lambda表达式本身就已经是一个函数了，所以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">lambda</span> x: x)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>是合理的，（而且上述代码打印：3）</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>lambda表达式也是函数，python的函数几乎什么都可以return，lambda也是<br>所以lambda表达式可以return另外一个lambda表达式函数</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>lambda表达式里，冒号前面的是正式参数，不过你也可以在冒号之后用到没在冒号前面出现的变量<br>这些变量是遵守变量作用域的，和一般地用def嵌套定义函数是一样的</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7"></a>7</h3><p>函数也可以作为参数</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8"></a>8</h3><p>print函数的返回值是None，什么都不会打印</p>
+<p>Truth Will Prevail需要回看slides，知识点不熟</p>
+<hr>
+<p>46: cs101学习git,vim,tmux等<br>47: 比赛:超算,ctf<br>48: 多和其他学校的人交流:tuna,ustc<br>49: 参加社团:sjtug, nimo<br>52: 实习（多刷牛客网,linkedin,脉脉）<br>56: 自己装机组建homelab能学到很多</p>
+<hr>
+<h3 id="9"><a href="#9" class="headerlink" title="9"></a>9</h3><p>python里面想要枚举一个dict其实非常简单：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> dic.keys():</span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> dic.values()</span><br></pre></td></tr></table></figure>
+<p>即可<br>当然也还有键值对一并枚举的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> dic.items():</span><br></pre></td></tr></table></figure>
+<p>这些才是python的“终极优势”的啊，要好好发挥出来的啊</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10"></a>10</h3><p>在python里面，range就是一种独立的类型，比如下面的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>python输出的直接就是<code>range(1, 3)</code>，而不是一个列表或元组<br>想要把一个range变成真正的列表或元组，需要给它做类型转换</p>
+<h3 id="11"><a href="#11" class="headerlink" title="11"></a>11</h3><p>安装python包的时候，有时会报一些subprocess出错，这些有的很棘手，这时一个对策是：<br>release下载.whl然后本地安装<br>.whl文件为了方便python包的离线安装与分发而存在<br>其本质就是一个压缩包，所以直接将其后缀改为.zip就变成熟悉的压缩包<br>解压之后就会看到其内部的文件，其中有一个带-info的文件夹，里面有一个文件METADATA<br>这是一个文本文件，用记事本打开之后，有若干Requires-Dist，那就是这个包的依赖<br>再顺藤摸瓜去安装好所有依赖项后，就可以顺利安装这个包了<br>如果没有Requires-Dist，就说明当前这个包不依赖别的包，直接安装即可<br>安装包的时候要特别注意版本限制</p>
+<h3 id="12"><a href="#12" class="headerlink" title="12"></a>12</h3><p>如果搞了一个map的iterator，那么这个iterator在调用next的时候，是按照<strong>键值</strong>来返回的</p>
+<h3 id="13"><a href="#13" class="headerlink" title="13"></a>13</h3><p>list的append函数是有<strong>正常的返回</strong>的，只不过人家的返回值是一个None罢了<br>虽然这么说来等于说人家没有返回值，但是肯定不能就此认为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line"><span class="built_in">print</span>(s.append(<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+<p>会打印出来新的s，人家也是正统的函数，该返回什么就会返回什么</p>
+<h3 id="14"><a href="#14" class="headerlink" title="14"></a>14</h3><p>在python中，按顺序执行出来是什么就是什么，比如append函数，虽然返回一个None，但是执行之后是对执行的对象切切实实做了改变的<br>在python中，把一行代码按照执行顺序拆成多条直观的代码，就能很清晰地知道运行了什么以及结果会是如何，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">s.extend([s.append(<span class="number">9</span>), s.append(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+<p>打印出来的是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[3, 4, 5, 9, 10, None, None]</span><br></pre></td></tr></table></figure>
+
+<h3 id="15"><a href="#15" class="headerlink" title="15"></a>15</h3><p>在python中，类可以有<strong>自己的</strong>成员变量，怎么说“自己的”呢？只能说从运行的表象去理解，比如下面的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">	x, y = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
+<p>那么运行起来的时候，此处的<code>x</code>和<code>y</code>就是直接属于类<code>A</code>的变量，用法是直接<code>A.x</code>和<code>A.y</code>，而无需通过实例来访问<br>然而，类的实例也会有自己的一份成员变量，刚刚创建好一个实例的时候，这个实例会拥有类原本直接拥有的成员变量，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    x, y = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">obj = A()</span><br><span class="line"><span class="built_in">print</span>(obj.x) // <span class="number">0</span></span><br><span class="line"></span><br><span class="line">A.x = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">3</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">1</span>, <span class="number">3</span></span><br><span class="line"></span><br><span class="line">A.x = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(obj.x, A.x) // <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>并且注意到这个时候实例所“拥有的”这个成员变量链接到的就是类原本直接拥有的成员变量<br>然而，当对实例下属的<strong>它自己真正的成员变量</strong>（而不是它所属于的类的）进行（能够或需要创建一个新的变量的）操作时，这个实例就开始拥有独属于自己的成员变量，这和一般的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">	<span class="variable language_">self</span>.x = ...</span><br></pre></td></tr></table></figure>
+<p>道理是一样的（即使变量名重复）<br>在这之后，在类定义外部直接<code>obj.x</code>其实已经是<code>self.x</code>的用法了，而不是刚刚初始化时候等价于<code>A.x</code>的用法<br>接下来考虑的是继承的问题，针对这个问题把子类想象为一个实例去理解即可，至少运行起来的表象的规律是一致的</p>
+<hr>
+<p>至此，CS61A（Fall2024）的12个Lab全部写完啦~<br><del>虽然但是，还有HW和Project没写捏……</del></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -369,7 +491,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Data Structures</a>
+            <a href="/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">[object Object]</a>
         </h2>
 
         <div class="post-meta">
@@ -378,10 +500,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-05-04 11:46:22 / Modified: 11:51:06" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
+              <time title="Created: 2025-05-04 11:46:22" itemprop="dateCreated datePublished" datetime="2025-05-04T11:46:22+08:00">2025-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-08-12 18:14:42" itemprop="dateModified" datetime="2025-08-12T18:14:42+08:00">2025-08-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -405,14 +533,111 @@
       
           <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>包括分块这类思想性的项目。</p>
 <p>既然如此，今天（2025.5.3）又被分块创到了，就先写一下吧。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><p>分块是一种思想，什么思想呢？平衡预处理和查询的思想。</p>
+<p>什么意思呢，一般的暴力写出来，基本是不需要“预处理”的，但是“查询”部分开销过大。</p>
+<p>之所以称其为“暴力”做法，也就是这份巨大的开销了。</p>
+<p>分块就是用来拉平这不平衡的两端的。</p>
+<p>也就是说，分块希望：</p>
+<ul>
+<li>预处理好的部分，在查询的时候 $O(1)$ 直接拿来用（虽然这样的部分本身也有<strong>一定规模</strong>）</li>
+<li>剩下的部分，因为能够成为<strong>一定规模</strong>的部分都预处理好了，所以即使暴力查询，开销不会大于这“<strong>一定规模</strong>”</li>
+</ul>
+<p>而分块本身不对“查询”这一件事情，或者说用以完成“查询”这一操作的算法进行（显著）优化的。</p>
+<p>所以从另一个角度来说，假如一个问题<strong>本身的算法没有很好的优化方向</strong>，那么在<strong>预处理这个方向上</strong>可以考虑分块。</p>
+<blockquote>
+<p>比如求一片区域的数对某个每次都不一样的数取模的结果的最大值，这在数学方面其实没有很好的优化方向</p>
+</blockquote>
+<p>进一步配合前缀和与差分等其他算法可以进一步优化，但这是分块的后话了，此处无需关心。</p>
+<p>那么深入下去，前文频繁出现“一定规模”，这就关乎“<strong>块长</strong>”，分块思想就是通过块长来平衡预处理和查询的。</p>
+<p>如何决定块长？答案是：根据时间复杂度分析。时间复杂度会成为一个关于块长的函数，求其最小值点即可。</p>
+<p>如何分析时间复杂度？答案是：假定已经按照 $B$ 作为块长分块，此时的暴力时间复杂度。</p>
+<p>最后使用数学手段求得最小值点，即为所求块长。</p>
+<p>注意分块思想能够处理的“信息类型”基本上是<strong>满足答案由部分收集而成</strong>的那种，这个就要具体问题具体分析。</p>
+<h2 id="散列表（哈希表）"><a href="#散列表（哈希表）" class="headerlink" title="散列表（哈希表）"></a>散列表（哈希表）</h2><p>散列表（哈希表）解决的问题就是有关<strong>查找</strong>的问题：如何快速搜索到需要的关键词？</p>
+<p>首先考虑查找的本质的问题：什么叫做“查找”？</p>
+<h3 id="查找的本质"><a href="#查找的本质" class="headerlink" title="查找的本质"></a>查找的本质</h3><p>【浙大】数据结构课程中，讲查找的本质是<strong>已知对象找位置</strong></p>
+<p>为了做到这一点，有两种基本方法：</p>
+<ol>
+<li>有序安排对象：全序（一开始就把整个序列排好序）、半序（比如二叉搜索树，只是保证左右子树之间的次序）</li>
+<li>直接“算出”对象位置：这就是<strong>散列</strong>的思想方法</li>
+</ol>
+<h3 id="散列查找法"><a href="#散列查找法" class="headerlink" title="散列查找法"></a>散列查找法</h3><p>关键在于两部分：</p>
+<ol>
+<li>计算位置：构造散列函数确定关键词存储位置</li>
+<li>解决冲突：应用某种策略解决多个关键词位置相同的问题</li>
+</ol>
+<p>若是处理得当，时间复杂度几乎是常量 $O(1)$</p>
+<h3 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h3><blockquote>
+<p>贯穿始终的原理：查找某元素，找到表中某处为空，则该元素必然不在表中</p>
+</blockquote>
+<p><strong>装填因子</strong> $\alpha&#x3D;\frac{m}{n}$，其中 $n$ 是散列表空间大小，$m$ 是填入散列表中的元素个数</p>
+<p>好的散列函数至少要考虑到两个因素：</p>
+<ol>
+<li>计算简单，以提高转换速度</li>
+<li>关键词对应的地址空间分布均匀，以尽量减少冲突</li>
+</ol>
+<h3 id="散列函数构造方法"><a href="#散列函数构造方法" class="headerlink" title="散列函数构造方法"></a>散列函数构造方法</h3><p><strong>直接定址法</strong></p>
+<p>散列函数取为某线性函数</p>
+<p><strong>除留余数法</strong></p>
+<p>对某素数求余</p>
+<p><strong>数字分析法</strong></p>
+<p>根据数字关键字在各位上的变化情况，取较为随机的位作为散列地址</p>
+<p><strong>折叠法</strong></p>
+<p>把关键词分割成位数相同的几个部分，然后叠加</p>
+<p><strong>平方取中法</strong></p>
+<p>平方之后，取中间的若干位数作为散列地址</p>
+<hr>
+<p>对于字符关键字：</p>
+<p><strong>ASCII 码加和法</strong></p>
+<p>改进后：<strong>前三个字符移位法</strong></p>
+<p>继续改进：<strong>编码为32进制大数（存在 unsigned int 里最后求余）</strong></p>
+<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><p>常用方法：</p>
+<ol>
+<li>换个位置：开放地址法</li>
+<li>同一位置的冲突对象组织在一起：链地址法</li>
+</ol>
+<p>开放地址法（Open Addressing）</p>
+<p>若发生了第 $i$ 次冲突，试探的下一个地址将增加 $d_i$</p>
+<p>$d_i$ 取值的不同，对应不同的探测策略，比如：线性探测法、平方探测法、双散列等</p>
+<h3 id="散列表查找性能分析"><a href="#散列表查找性能分析" class="headerlink" title="散列表查找性能分析"></a>散列表查找性能分析</h3><p>分析两个指标：<strong>成功平均查找长度（ASLs）</strong>、<strong>不成功平均查找长度（ASLu）</strong></p>
+<p>ASLs 等于所有元素冲突次数加1之和的平均值（查找成功等价于所查找的元素在散列表中）</p>
+<p>ASLu 等于<strong>所有类别的关键字</strong>确定不在表中所需查找次数之和的平均值</p>
+<p>线性探测法会出现<strong>聚集</strong>现象</p>
+<p>二次探测法可能会出现无法插入（或无法判断不存在）的情况</p>
+<blockquote>
+<p>定理：如果散列表长度是某个 $4k+3$ 形式的素数时，平方探测法就可以探查到整个散列表空间</p>
+</blockquote>
+<h3 id="散列表实现细节"><a href="#散列表实现细节" class="headerlink" title="散列表实现细节"></a>散列表实现细节</h3><p>非常要注意的是删除操作，如果直接移除目标元素，那么可以想象到：本来，以前因为有这个元素，一些其他元素插入的时候冲突了被按照探测策略放入了其他位置，结果现在这个元素占据的表中的位置直接变成空位了，那么之后想要查找那些以前冲突了的其他元素，在探测到该空位的时候就会被判断为不在表内，从而给出错误的结果</p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：散列表删除.png"></p>
+<p>另外的一些截图：</p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：双散列探测法.png"></p>
+<p>还有一种<strong>再散列</strong>的方法，当散列表中元素太多的时候，查找效率会下降，这时将散列表扩大，并且<strong>原有元素需要重新计算放置到新表中</strong></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：再散列.png"></p>
+<h3 id="更细节的性能分析（只有结果，没有过程）"><a href="#更细节的性能分析（只有结果，没有过程）" class="headerlink" title="更细节的性能分析（只有结果，没有过程）"></a>更细节的性能分析（只有结果，没有过程）</h3><p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：线性性能.png"></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：平方性能.png"></p>
+<p><img src="C:\Users\30136\Desktop\笔记\预习【浙大】数据结构\笔记：分离性能.png"></p>
+<h2 id="块状链表"><a href="#块状链表" class="headerlink" title="块状链表"></a>块状链表</h2><p>块状链表应用了分块思想，将数组与链表取长补短，达到了较优秀的时间复杂度</p>
+<p>具体来说，数组能够实现 $O(1)$ 访问，却需要 $O(n)$ 实现任意位置插入（时间开销来源于需要给新数据腾出位置，所以需要依次移动后面的数据）；而链表能够实现 $O(1)$ 任意指定位置插入，却需要 $O(n)$ 访问某位置（这是因为链表存储不连续，每次只能够从表头开始遍历）</p>
+<p>但是如果链表上挂数组（不是数组上挂链表哈），那么再来考察一下这些复杂度就会发现：</p>
+<p>（把挂载的数组叫做块）假设数据总规模是 $n$（实际上直接这样去分析也不怎么严谨，但是原理确实是这样讲的，总之当作便于表示好了），链表上所挂的数组大小为 $m$（这个大小是预先定好的，默认预留空间的大小），那么链表的节点个数将会是 $\frac{n}{m}$，且：</p>
+<ol>
+<li>访问某处：在链表上 $O(\frac{n}{m})$ 跳到某处所在块，再 $O(1)$ 数组访问</li>
+<li>在某处插入：还是先 $O(\frac{n}{m})$ 跳到某处所在块，再 $O(?)$ 链表插入</li>
+</ol>
+<p>（看起来时间还是花在链表上，但实际上是两边各做了让步）</p>
+<p>插入操作需要仔细考虑一下，那个 “?” 究竟是什么？</p>
+<p>首先找到指定的位置，这一步很容易理解，直接在链表上遍历就是了，接下来，如果定位在一块的末尾（我们的问题定义为“在某处<strong>之后</strong>插入”），那么直接在链表上的该处插入数据块即可，这样是 $O(1)$ 的</p>
+<p><strong>注意注意：到此为止所说的 $O(1)$ 指的都是操作数层面的，代表“常数次操作”，但是比如插入一大串字符串，那么为了把数据复制进块状链表中，会产生诸如 $O(len)$ 的时间开销，这些没有表示在内（所以说不严谨就是）</strong></p>
+<p>但是如果定位在块的中间，那么就需要 $O(m)$ 的时间开销来腾出位置（和纯数组一样）</p>
+<p>因此，取 $m &#x3D; \sqrt{n}$ 会得到最优的整体的时间复杂度</p>
+<p>但是疑似也可以进一步进行更精细的分析，得到针对非常具体的问题的最优时间复杂度</p>
+<p>一般应用时，直接固定块的大小上限为常数，并且认为平均时间复杂度为 $O(\sqrt{n})$</p>
+<p>实际实现的时候，可以实现为：在一次插入之中，先不由分说全部插入到指定位置，然后进行全局的 maintain，这个 maintain 将每个块的大小控制在确定的范围内</p>
+<p>maintain 其实也是很直接，直接遍历链表，该分裂则分裂，该合并则合并</p>
+<p>然后块状链表的删除也是先定位，然后整块在链表上删，散块在数组上删，记得 maintain</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>采用 STL 的 list 套 vector，合理吧（链表上挂数组）</p>
+<p>不得不说，<strong>左闭右开、从0开始</strong>是真的人类与计算机智慧</p>
+
       
     </div>
 
@@ -445,7 +670,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/02/23/xxx-first-blog/" class="post-title-link" itemprop="url">xxx-first-blog</a>
+            <a href="/2025/02/23/xxx-first-blog/" class="post-title-link" itemprop="url">Fulisike-first-blog</a>
         </h2>
 
         <div class="post-meta">
@@ -462,7 +687,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-05-04 11:45:49" itemprop="dateModified" datetime="2025-05-04T11:45:49+08:00">2025-05-04</time>
+                <time title="Modified: 2025-08-12 18:14:04" itemprop="dateModified" datetime="2025-08-12T18:14:04+08:00">2025-08-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -485,8 +710,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>大家好，我是xxx。</p>
-<p>这是我第一次使用hexo搭建的博客。</p>
+          <p>大家好，我是 Fulisike。</p>
+<p>这是我第一次使用 hexo 搭建的博客。</p>
 <p>我会在这里记录我的学习过程，分享我的学习成果。</p>
 <p>我希望自己能够坚持下去，不断学习，不断进步。</p>
 <p>第一次尝试到这里，希望大家多多支持。</p>
@@ -664,7 +889,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
