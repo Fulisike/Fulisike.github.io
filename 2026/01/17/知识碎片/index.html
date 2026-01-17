@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Home">
 <meta property="og:description" content="知识碎片1、混淆矩阵混淆矩阵（Confusion Matrix），又称为可能性矩阵或错误矩阵，在监督学习中一般叫做匹配矩阵，在图像精度评价中或分类任务中主要用于比较分类结果和实际测得值，可以直观显示出分类结果的精度 预测值作为列标，实际值作为行标，单元格内容表示：满足预测值为该单元格所在列对应的类别，且实际值为该单元格所在行对应的类别的样本数（或比例） 因此，一个一般的混淆矩阵会长成下面这种样子：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:\Users\30136\Desktop(re">
-<meta property="og:image" content="c:\Users\30136\Desktop(re">
-<meta property="og:image" content="c:\Users\30136\Desktop(re">
+<meta property="og:image" content="http://example.com/.%5Cres%5CCM_pic1.png">
+<meta property="og:image" content="http://example.com/.%5Cres%5CMSVC_pic1.png">
+<meta property="og:image" content="http://example.com/.%5Cres%5CMSVC_pic2.png">
 <meta property="article:published_time" content="2026-01-17T10:42:47.009Z">
-<meta property="article:modified_time" content="2026-01-17T10:53:08.896Z">
+<meta property="article:modified_time" content="2026-01-17T12:17:46.948Z">
 <meta property="article:author" content="Fulisike">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:\Users\30136\Desktop(re">
+<meta name="twitter:image" content="http://example.com/.%5Cres%5CCM_pic1.png">
 
 <link rel="canonical" href="http://example.com/2026/01/17/%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87/">
 
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2026-01-17 18:42:47 / Modified: 18:53:08" itemprop="dateCreated datePublished" datetime="2026-01-17T18:42:47+08:00">2026-01-17</time>
+              <time title="Created: 2026-01-17 18:42:47 / Modified: 20:17:46" itemprop="dateCreated datePublished" datetime="2026-01-17T18:42:47+08:00">2026-01-17</time>
             </span>
 
           
@@ -245,7 +245,7 @@
 <p>由此可以继续定义出 $F_\beta_Score$ 用以以不同权重配比（$\beta$）衡量模型的<strong>精确度</strong></p>
 <p>精确率和精确度是判断分类模型总体的标准（区别于计算某一分类的特性的标准）</p>
 <p>附图如下（&#x3D;&#x3D;还没去弄懂&#x3D;&#x3D;）：</p>
-<p><img src="C:\Users\30136\Desktop(re" alt="混淆矩阵蕴含的各项指标">learn\res\CM_pic1.png)</p>
+<p><img src="/.%5Cres%5CCM_pic1.png" alt="混淆矩阵蕴含的各项指标"></p>
 <h2 id="2、元胞自动机"><a href="#2、元胞自动机" class="headerlink" title="2、元胞自动机"></a>2、元胞自动机</h2><p>实际上，之前刷到的“模拟生命演化”之类的，用的就是元胞自动机</p>
 <p>元胞自动机把连续的空间划分为一个又一个<strong>细胞</strong>，即离散化，并且将时间也一并离散化（实际上这是计算机模拟连续过程所必须做的一步（应该吧）），每一时刻根据<strong>一定的规则</strong>，<strong>并行地</strong>计算每一个细胞<strong>周围的</strong>细胞对其造成的影响，据此并行地更新每一个细胞的状态，实现对实际空间演化情况的模拟</p>
 <p>“周围”有若干种，如：</p>
@@ -319,11 +319,11 @@
 <p>写好了 CMakeLists.txt，现在直接用 CMake GUI 是非常方便的，最后构建到一个 build 文件夹里（这个文件夹是指定的，名字也不一定要叫 build）</p>
 <p>然后在 Visual Studio 中打开项目，如果一切正常的话直接<strong>生成解决方案</strong>就可以了</p>
 <p>这里开始要注意，有两个基本选项，如下图：</p>
-<p><img src="C:\Users\30136\Desktop(re" alt="MSVC 生成选项">learn\res\MSVC_pic1.png)</p>
+<p><img src="/.%5Cres%5CMSVC_pic1.png" alt="MSVC 生成选项"></p>
 <p>如果选择 Release，则生成（<strong>对了，VS 里生成等于编译</strong>）出来的东西是<strong>发行版</strong>，且文件名等信息与设置的一致，该是什么就是什么不会变</p>
 <p>如果选择 Debug，则生成出来的东西是<strong>调试版</strong>，据观察得，文件名会在末尾加上一个<code>d</code>表示 Debug 模式（正如 Linux 中，想要正确链接一个链接库，实际上的链接库的文件名开头会加上<code>lib</code>一样，哦虽然这两者原理不同，但是至少…表观上来看很像…）</p>
 <p>选择 x64 还是 x86 决定了链接器往哪个文件夹里面找链接库，如下图：</p>
-<p><img src="C:\Users\30136\Desktop(re" alt="MSVC 内部配置">learn\res\MSVC_pic2.png)</p>
+<p><img src="/.%5Cres%5CMSVC_pic2.png" alt="MSVC 内部配置"></p>
 <p>（在 VS2022 社区版里，工具里面甚至还能找到 llvm，不过这疑似是可以在安装的时候设置的？）</p>
 <p>一般来说，需要在 Visual Studio 中使用 C&#x2F;C++ 的第三方库，可以在人家的网站上下载到：</p>
 <p>源代码，针对各个平台编译的配置写好了，看你自己是哪个平台就用哪一套流程</p>
